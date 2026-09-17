@@ -1,0 +1,259 @@
+* {
+  box-sizing: border-box;
+}
+
+:root {
+  --konami-red: #b00019;
+  --konami-red-dark: #980015;
+  --bg-gray: #efefef;
+  --line: #d5d5d5;
+  --text: #3a3a3a;
+  --muted: #707070;
+  --card-bg: #ffffff;
+  --error: #c62828;
+  --success: #167f39;
+  --input-bg: #fbfbfb;
+}
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+  font-family: "Roboto", Arial, Helvetica, sans-serif;
+  background: var(--bg-gray);
+  color: var(--text);
+}
+
+.topbar {
+  background: #f8f8f8;
+  border-bottom: 1px solid #ececec;
+}
+
+.topbar-inner {
+  max-width: 1080px;
+  margin: 0 auto;
+  padding: 12px 16px;
+}
+
+.brand {
+  display: inline-flex;
+  align-items: center;
+  text-decoration: none;
+}
+
+.brand img {
+  display: block;
+  width: 120px;
+  height: auto;
+  object-fit: contain;
+}
+
+.hero {
+  background: linear-gradient(180deg, #cc001d 0%, var(--konami-red) 100%);
+  color: white;
+}
+
+.hero-inner {
+  max-width: 1080px;
+  margin: 0 auto;
+  padding: 34px 16px;
+}
+
+.hero h1 {
+  margin: 0 0 8px;
+  font-size: clamp(2rem, 4vw, 3rem);
+  font-weight: 500;
+}
+
+.hero p {
+  margin: 0;
+  font-size: 1.05rem;
+  opacity: 0.95;
+}
+
+.content-wrapper {
+  max-width: 1080px;
+  margin: 0 auto;
+  padding: 32px 16px 56px;
+}
+
+.card {
+  max-width: 760px;
+  margin: 0 auto;
+  background: var(--card-bg);
+  border: 1px solid #cfcfcf;
+  border-radius: 8px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.08);
+  overflow: hidden;
+}
+
+.card-header {
+  padding: 28px 32px 18px;
+}
+
+.card-header h2 {
+  margin: 0 0 6px;
+  font-size: 2rem;
+  font-weight: 400;
+  color: #5b5b5b;
+}
+
+.card-header p {
+  margin: 0;
+  color: var(--muted);
+  line-height: 1.6;
+}
+
+form {
+  padding: 0 32px 32px;
+}
+
+.form-group {
+  margin-bottom: 22px;
+}
+
+label {
+  display: block;
+  margin-bottom: 8px;
+  font-weight: 700;
+  color: #4a4a4a;
+}
+
+input,
+select,
+textarea {
+  width: 100%;
+  padding: 14px;
+  border: 1px solid #bcbcbc;
+  border-radius: 4px;
+  background: var(--input-bg);
+  color: var(--text);
+  font: inherit;
+  outline: none;
+  transition: border-color 0.15s ease, box-shadow 0.15s ease;
+}
+
+input::placeholder,
+textarea::placeholder {
+  color: #8a8a8a;
+}
+
+input:focus,
+select:focus,
+textarea:focus {
+  border-color: #84afff;
+  box-shadow: 0 0 0 3px rgba(132, 175, 255, 0.35);
+}
+
+textarea {
+  resize: vertical;
+  min-height: 160px;
+}
+
+.field-footer {
+  display: flex;
+  justify-content: space-between;
+  gap: 12px;
+  margin-top: 6px;
+  color: var(--muted);
+}
+
+.error {
+  min-height: 1em;
+  display: inline-block;
+  color: var(--error);
+}
+
+button {
+  display: block;
+  width: min(280px, 100%);
+  margin: 16px auto 0;
+  padding: 14px 18px;
+  border: none;
+  border-radius: 4px;
+  background: var(--konami-red);
+  color: white;
+  font-size: 1.45rem;
+  font-weight: 700;
+  cursor: pointer;
+  transition: background 0.15s ease, opacity 0.15s ease;
+}
+
+button:hover {
+  background: var(--konami-red-dark);
+}
+
+button:disabled {
+  opacity: 0.7;
+  cursor: wait;
+}
+
+.form-message {
+  min-height: 24px;
+  margin-top: 18px;
+  text-align: center;
+  font-weight: 700;
+}
+
+.form-message.success {
+  color: var(--success);
+}
+
+.form-message.error {
+  color: var(--error);
+}
+
+.hp-field {
+  position: absolute !important;
+  left: -10000px !important;
+  width: 1px !important;
+  height: 1px !important;
+  overflow: hidden !important;
+}
+
+.footer {
+  background: #f8f8f8;
+  border-top: 1px solid #dfdfdf;
+}
+
+.footer-inner {
+  max-width: 1080px;
+  margin: 0 auto;
+  padding: 18px 16px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16px 32px;
+}
+
+.footer a {
+  color: #555;
+  text-decoration: none;
+}
+
+.footer a:hover {
+  text-decoration: underline;
+}
+
+@media (max-width: 700px) {
+  .brand img {
+    width: 105px;
+  }
+
+  .hero-inner {
+    padding: 24px 16px;
+  }
+
+  .card-header,
+  form {
+    padding-left: 18px;
+    padding-right: 18px;
+  }
+
+  .card-header h2 {
+    font-size: 1.65rem;
+  }
+
+  button {
+    font-size: 1.2rem;
+  }
+}

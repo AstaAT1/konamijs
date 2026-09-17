@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="eFootball account recovery request form" />
+  <title>KONAMI - eFootball Account Recovery</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+  <header class="topbar">
+    <div class="topbar-inner">
+      <a class="brand" href="/" aria-label="KONAMI home">
+        <img src="konami-logo.png" alt="KONAMI" />
+      </a>
+    </div>
+  </header>
+
+  <main class="page">
+    <section class="hero">
+      <div class="hero-inner">
+        <h1>eFootball Account Recovery</h1>
+        <p>Submit your request so the support team can review your account access issue.</p>
+      </div>
+    </section>
+
+    <section class="content-wrapper">
+      <div class="card">
+        <div class="card-header">
+          <h2>Recovery Request Form</h2>
+          <p>Please complete all fields with accurate information.</p>
+        </div>
+
+        <form id="recoveryForm" novalidate>
+          <input type="hidden" id="submittedAt" name="submittedAt" />
+
+          <div class="form-group">
+            <label for="fullName">Full Name</label>
+            <input
+              type="text"
+              id="fullName"
+              name="fullName"
+              autocomplete="name"
+              placeholder="Enter your full name"
+              maxlength="100"
+              required
+            />
+            <small class="error" id="fullNameError"></small>
+          </div>
+
+          <div class="form-group">
+            <label for="accountName">eFootball Account Name</label>
+            <input
+              type="text"
+              id="accountName"
+              name="accountName"
+              placeholder="Enter your eFootball account name"
+              maxlength="100"
+              required
+            />
+            <small class="error" id="accountNameError"></small>
+          </div>
+
+          <div class="form-group">
+            <label for="email">Email linked to the account</label>
+            <input
+              type="email"
+              id="email"
+              name="email"
+              autocomplete="email"
+              placeholder="name@example.com"
+              maxlength="160"
+              required
+            />
+            <small class="error" id="emailError"></small>
+          </div>
+
+          <div class="form-group">
+            <label for="phone">Phone Number</label>
+            <input
+              type="tel"
+              id="phone"
+              name="phone"
+              autocomplete="tel"
+              placeholder="+212 6 12 34 56 78"
+              maxlength="30"
+              required
+            />
+            <small class="error" id="phoneError"></small>
+          </div>
+
+          <div class="form-group">
+            <label for="country">Country / Region</label>
+            <select id="country" name="country" required>
+              <option value="">Select your country / region</option>
+              <option>Morocco</option>
+              <option>Algeria</option>
+              <option>Tunisia</option>
+              <option>Egypt</option>
+              <option>Saudi Arabia</option>
+              <option>United Arab Emirates</option>
+              <option>France</option>
+              <option>Spain</option>
+              <option>Italy</option>
+              <option>Germany</option>
+              <option>United Kingdom</option>
+              <option>United States</option>
+              <option>Canada</option>
+              <option>Brazil</option>
+              <option>Argentina</option>
+              <option>Japan</option>
+              <option>South Korea</option>
+              <option>Other</option>
+            </select>
+            <small class="error" id="countryError"></small>
+          </div>
+
+          <div class="form-group">
+            <label for="problem">Issue Description</label>
+            <textarea
+              id="problem"
+              name="problem"
+              rows="7"
+              placeholder="Describe the issue you are experiencing with your account."
+              maxlength="2000"
+              required
+            ></textarea>
+
+            <div class="field-footer">
+              <small class="error" id="problemError"></small>
+              <small id="problemCount">0 / 2000</small>
+            </div>
+          </div>
+
+
+          <button id="submitButton" type="submit">Submit</button>
+          <div id="formMessage" class="form-message" aria-live="polite"></div>
+        </form>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-inner">
+      <a href="#">Terms of Use / Privacy</a>
+      <a href="#">Support</a>
+      <a href="#">Company Information</a>
+    </div>
+  </footer>
+
+  <!-- EmailJS Browser SDK v4 -->
+  <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+
+  <!-- Put your EmailJS IDs in this file -->
+  <script src="emailjs-config.js"></script>
+
+  <script src="script.js"></script>
+</body>
+</html>
